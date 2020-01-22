@@ -126,24 +126,23 @@ spellsranger = ["Alarm",'Animal Friendship','Cure Wounds','Detect Magic','Detect
 spellssorcerer = ["Burning Hands",'Charm Person','Color Spray','Comprehend Languages','Detect Magic','Disguise Self','Expeditious Retreat','False Life','Feather Fall','Fog Cloud','Jump','Mage Armor','Magic Missile','Shield','Silent Image','Sleep','Thunderwave','Alter Self','Blindness/Deafness','Blur','Darkness','Darkvision','Detect Thoughts','Enhance Ability','Enlarge/Reduce','Gust Of Wind','Hold Person','Invisibility','Knock','Levitate','Mirror Image','Misty Step','Scorching Ray','See Invisibility','Shatter','Spider Climb','Suggestion','Web','Blink','Clairvoyance','Counterspell','Daylight','Dispel Magic','Fear','Fireball','Fly','Gaseous Form','Haste','Hypnotic Pattern','Lightning Bolt','Major Image','Protection From Energy','Sleet Storm','Slow','Stinking Cloud','Tongues','Water Breathing','Water Walk','Banishment','Blight','Confusion','Dimension Door','Dominate Beast','Greater Invisibility','Ice Storm','Polymorph','Stoneskin','Wall Of Fire','Animate Objects','Cloudkill','Cone Of Cold','Creation','Dominate Person','Hold Monster','Insect Plague','Seeming','Telekinesis','Teleportation Circle','Wall Of Stone','Chain Lightning','Circle Of Death','Disintegrate','Eyebite','Globe Of Invulnerability','Mass Suggestion','Move Earth','Sunbeam','True Seeing','Delayed Blast Fireball','Etherealness','Finger Of Death','Fire Storm','Plane Shift','Prismatic Spray','Reverse Gravity','Teleport','Dominate Monster','Earthquake','Incendiary Cloud','Power Word Stun','Sunburst','Gate','Meteor Swarm','Power Word Kill','Time Stop',"Wish"]
 spellswarlock = ["Charm Person","Comprehend Languages","Expeditious Retreat","Hellish Rebuke","Illusory Script","Protection from Evil and Good","Unseen Servant","Darkness","Enthrall","Hold Person","Invisibility","Mirror Image","Misty Step","Ray of Enfeeblement","Shatter","Spider Climb","Suggestion","Counterspell","Dispel Magic","Fear","Fly","Gaseous Form","Hypnotic Pattern","Magic Circle","Major Image","Remove Curse","Tongues","Vampiric Touch","Banishment","Blight","Dimension Door","Hallucinatory Terrain","Contact Other Plane","Dream","Hold Monster","Scrying","Circle Of Death","Conjure Fey","Create Undead","Eyebite","Flesh To Stone","Mass Suggestion","True Seeing","Etherealness","Finger Of Death","Forcecage","Plane Shift","Demiplane","Dominate Monster","Feeblemind","Glibness","Power Word Stun","Astral Projection""Foresight","Imprisonment","Power Word Kill","True Polymorph"]
 
+
 #create db
 class databace:
     def __init__(self):
-        print("hello")
-
-    connect = sqlite3.connect('Characters.db')
-        #cursor= little gnome that does you db stuff you you
-    tomithy = connect.cursor()
-        # create tables
-    tomithy.execute("""CREATE TABLE IF NOT EXISTS character(
-                    name text,
-                    class text,
-                    race text)""")
+        self.connect = sqlite3.connect('Characters.db')
+            #cursor= little gnome that does you db stuff you you
+        self.tomithy = connect.cursor()
+            # create tables
+        self.tomithy.execute("""CREATE TABLE IF NOT EXISTS characters(
+                        name text,
+                        class text,
+                        race text)""")
 
 
 
-    #make changes save
-    connect.commit()
-    #close db connection once done
-    connect.close()
-    #when submit button in hit the iterations from Charview need to be brought here, formatted into a list and sent to Charmodle
+        #make changes save
+        self.connect.commit()
+        #close db connection once done
+        self.connect.close()
+        #when submit button in hit the iterations from Charview need to be brought here, formatted into a list and sent to Charmodle
